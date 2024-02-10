@@ -46,13 +46,43 @@ a:hover {
   color: #9fcbee;
   font-size: 4em;
   font-family: "BackIssues";
-  
+  text-align: center;
+}
+
+.strip-header-span{
+  background-color: white;
 }
 
 .ask-prompt-header {
   color: #9fcbee;
   font-size: 2em;
   font-family: "BackIssues";
+  text-align: center;
+  margin-top: "20px";
+}
+
+.prompt-header-span{
+  background-color: white;
+}
+
+.centered-form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.submit-button-centering{
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.submit-button{
+  font-size: 4em;
+  width: "200px";
+  height: "50px"
 }
 
 .button-container {
