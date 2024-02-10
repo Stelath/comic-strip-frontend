@@ -1,20 +1,3 @@
-.image-container-left {
-    width: 25%;
-
-    border-bottom: 2px solid black;
-    border-top: 2px solid black;
-    border-left: 2px solid black;
-}
-
-.image-container-right {
-    width: 25%;
-
-
-    border-bottom: 2px solid black;
-    border-top: 2px solid black;
-    border-right: 2px solid black;
-}
-
 .screen-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* Creates 4 columns */
@@ -31,37 +14,44 @@
     clip-path: polygon(100% 100%, 0% 100%, 0% 0%, 100% 0%);
     object-fit: fill;
   } */
+.comic-frame-wrapper {
+    width: 95%;
+    padding: 3px; /* Changes border thickness */
+    
+    display: inline-block;
+    background-color: black;
+}
+
+.comic-frame-wrapper img {
+    margin: 0;
+}
 
 .comic-frame {
-    width: 95%; 
-    height: auto;
+    width: 100%; 
+    height: 100%;
     object-fit: cover;
+    margin: 0;
 }
 
 .comic-frame.type-1 {
-    width: 95%; 
-    height: 200px;
-    border: 2px solid black;
     clip-path: polygon(100% 100%, 0% 90%, 0% 0%, 100% 0%);
-    margin-bottom: -15px;
-    margin-top: 10px
   }
+
+.comic-frame-wrapper.type-1 {
+    clip-path: polygon(100% 100%, 0% 90%, 0% 0%, 100% 0%);
+}
 
 
 .comic-frame.type-2 {
-    width: 95%; 
-    height: 200px; 
-    border: 2px solid black;
+    clip-path: polygon(100% 100%,0% 100%,0% 0%,100% 10%);
+}
+
+.comic-frame-wrapper.type-2 {
     clip-path: polygon(100% 100%,0% 100%,0% 0%,100% 10%);
 }
 
 .comic-frame.type-3 {
-    position: relative;
-    width: 95%;
-    height: 200px; 
     clip-path: polygon(100% 90%,0% 100%,0% 0%,100% 0%);
-    margin-bottom: -15px;
-    margin-top: 10px;
 }
 
 /* .image-type-3:before {
@@ -77,22 +67,13 @@
 */
 
 .comic-frame.type-4 {
-    width: 95%; 
-    height: 200px; 
-    border: 2px solid black;
     clip-path: polygon(100% 100%,0% 100%,0% 10%,100% 0%);
 }
 
 .comic-frame.type-5 {
-    width: 95%; 
-    height: 200px; 
-    border: 2px solid black;
     clip-path: polygon(90% 100%,0% 100%,0% 10%,100% 0%);
 }
 
 .comic-frame.type-6 {
-    width: 95%; 
-    height: 200px; 
-    border: 2px solid black;
     clip-path: polygon(100% 100%,10% 100%,0% 10%,100% 0%);
 }

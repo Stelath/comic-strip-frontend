@@ -74,6 +74,14 @@ button:hover {
   background-color: #9fcbee;
 }
 
+.comic-page {
+  width: 35%;
+  aspect-ratio: 2/3;
+  border: 3px solid #6497bf; 
+  border-radius: 15px;
+  background-color: #ffffff;
+}
+
 .carousel-button-container {
   width: 7rem;
   height: 5rem;

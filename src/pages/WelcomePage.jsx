@@ -9,9 +9,9 @@ import {
   Image,
 } from "react-bootstrap";
 import "../CSS/WelcomePage.css";
-import layout4_1 from "./comicBookPages";
 
 import { ArrowLeft, ArrowRight } from "lucide-react";
+import ComicPageFrames from "./comicBookPages";
 
 export default function MainLandingPage() {
   const [showButton, setShowButton] = useState(true);
@@ -99,7 +99,9 @@ export default function MainLandingPage() {
         <div>
           <h1>Submitted Text</h1>
           <div id="comic-container">
-            {layout4_1()}
+            <div className="comic-page">
+                <ComicPageFrames images={["/images/img1.jpg", "/images/img2.jpg", "/images/img3.jpg", "/images/img4.png"]} layoutNumber={1} />
+            </div>
             <div className="carousel-button-container">
               <button className="">
                 <ArrowLeft />
