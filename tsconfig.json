@@ -1,6 +1,10 @@
 {
   "compilerOptions": {
     "target": "es5",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+    },
     "lib": [
       "dom",
       "dom.iterable",
@@ -15,12 +19,16 @@
     "noFallthroughCasesInSwitch": true,
     "module": "esnext",
     "moduleResolution": "node",
+    "composite": true,
+    "rootDir": ".",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx"
   },
   "include": [
-    "src"
-  ]
+    "src",
+    "**/*.tsx",
+    "**/*.ts"
+  ],
 }

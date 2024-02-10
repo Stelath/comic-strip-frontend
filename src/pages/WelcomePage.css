@@ -1,0 +1,80 @@
+/* FILEPATH: /C:/Users/alfdu/OneDrive/Documents/GitHub/UGAHacks-2024-Frontend/src/pages/WelcomePage.css */
+
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Set font and background color */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+}
+
+/* Set styles for headings */
+h1, h2, h3 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Set styles for paragraphs */
+p {
+  color: #666;
+  line-height: 1.5;
+}
+
+/* Set styles for links */
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Set styles for buttons */
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Set styles for images */
+/* img {
+    width: 200px;  Change the width value as per your requirement 
+     height: 200px; Change the height value as per your requirement 
+}  */
+
+
+/* .image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    justify-content: center;
+}
+
+.image-grid img {
+    max-width: 100%;
+    height: auto;
+} */
+
+.image-container img {
+    width: 200px; /* Change the width value as per your requirement */
+    height: 200px; /* Change the height value as per your requirement */
+}
+
+.button-container img {
+    width: 20px;
+    height: 20px;
+}
+
