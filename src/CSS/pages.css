@@ -1,0 +1,51 @@
+.image-container-2 {
+    width: 25%;
+}
+
+.screen-container .row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* .image-container-2 img {
+    width: 95%;
+    height: 200px;
+    border: 2px solid black;
+    clip-path: polygon(100% 100%, 0% 100%, 0% 0%, 100% 0%);
+    object-fit: fill;
+  } */
+
+.image-type-1 {
+    width: 95%; 
+    height: 200px;
+    border: 2px solid black;
+    clip-path: polygon(100% 100%, 0% 90%, 0% 0%, 100% 0%);
+    object-fit: fill;
+  }
+
+
+.image-type-2 {
+    width: 95%; 
+    height: 200px; 
+    border: 2px solid black;
+    clip-path: polygon(100% 100%,0% 100%,0% 0%,100% 10%);
+    object-fit: fill;
+}
+
+.image-type-3 {
+    width: 95%;
+    height: 200px; 
+    border: 2px solid black;
+    clip-path: polygon(100% 90%,0% 100%,0% 0%,100% 0%);
+    object-fit: fill;
+}
+
+.image-type-4 {
+    width: 95%; 
+    height: 200px; 
+    border: 2px solid black;
+    clip-path: polygon(100% 100%,0% 100%,0% 10%,100% 0%);
+    object-fit: fill;
+}

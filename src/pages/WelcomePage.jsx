@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Form, Button, Alert, Container, Row, Col, Image } from "react-bootstrap";
-import "./WelcomePage.css"
+import "../CSS/WelcomePage.css"
+import layout4_1 from './comicBookPages';
 
 export default function MainLandingPage() {
     const [showButton, setShowButton] = useState(true);
@@ -11,6 +12,30 @@ export default function MainLandingPage() {
         setShowButton(false);
         setIsSubmitted(true);
     };
+
+    const makePage = (images) => {
+        return (
+            <div>
+                <Row>
+                    {images.slice(0, 2).map((image, index) => (
+                        <Col key={index} className="image-container" style={{ width: "50%" }}>
+                            <Image src={image} className={index === 0 ? "mr-2" : ""} fluid style={{ marginRight: "10px" }} />
+                        </Col>
+                    ))}
+                </Row>
+                <Row>
+                    {images.slice(2, 4).map((image, index) => (
+                        <Col key={index} className="image-container" style={{ width: "50%" }}>
+                            <Image src={image} className={index === 0 ? "mr-2" : ""} fluid style={{ marginRight: "10px" }} />
+                        </Col>
+                    ))}
+                </Row>
+            </div>
+            
+        );
+    };    
+
+    
 
     return (
         // <div>
@@ -39,24 +64,26 @@ export default function MainLandingPage() {
             {isSubmitted && (
                 <div>
                     <h1>Submitted Text</h1>
-                    <Container>
+                    <Container className="screen-container">
+                        {/* <Row>
+                            <Col className="image-container">
+                                <Image src="/images/img1.jpg" className="mr-2" fluid />
+                                <Image src="/images/img2.jpg" className="mr-2" fluid/>
+                            </Col>
+                            <Col className="image-container">
+                                <Image src="/images/img3.jpg" className="mr-2" fluid/>
+                                <Image src="/images/img4.png" className="mr-2" fluid/>
+                            </Col>
+                        </Row> */}
+                        {layout4_1()}
                         <Row>
-                            <Col className="image-container" style={{ width: "50%" }}>
-                                <Image src="/images/img1.jpg" className="mr-2" />
-                                <Image src="/images/img2.jpg" className="mr-2" fluid />
-                            </Col>
-                            <Col className="image-container" style={{ width: "50%" }}>
-                                <Image src="/images/img3.jpg" className="mr-2" fluid />
-                                <Image src="/images/img4.png" className="mr-2" fluid />
-                            </Col>
-                        </Row>
-                            <Row>
-                            <Col className="button-container" style={{ width: "10%" }}>
-                                <Button variant="light">
+                            <Col className="button-container">
+                                <Button variant="light" className="mr-2">
                                     <img class="images/img-responsive" src="images/left-arrow.png" />
                                 </Button>
+                                
                             </Col>
-                            <Col className="button-container" style={{ width: "10%" }}>
+                            <Col className="button-container">
                                 <Button variant="light">
                                     <img src="images/right-arrow.png"/>
                                 </Button>
