@@ -1,8 +1,3 @@
-@font-face {
-	font-family: 'BackIssues';
-	src: local('BackIssues'), url(/fonts/BackIssuesBB_reg.otf) format('otf');
-}  
-
 .App {
   text-align: center;
 }
