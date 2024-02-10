@@ -1,5 +1,6 @@
 .image-container-left {
     width: 25%;
+
     border-bottom: 2px solid black;
     border-top: 2px solid black;
     border-left: 2px solid black;
@@ -7,15 +8,19 @@
 
 .image-container-right {
     width: 25%;
+
+
     border-bottom: 2px solid black;
     border-top: 2px solid black;
     border-right: 2px solid black;
 }
 
-.screen-container .row{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.screen-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Creates 4 columns */
+    grid-template-rows: repeat(2, 1fr); /* Creates 4 rows */
+    gap: 10px; /* Optional: Adds some space between grid items */
+    padding: 10px; /* Optional: Adds some padding around the grid */
 }
 
 
@@ -27,7 +32,13 @@
     object-fit: fill;
   } */
 
-.image-type-1 {
+.comic-frame {
+    width: 95%; 
+    height: auto;
+    object-fit: cover;
+}
+
+.comic-frame.type-1 {
     width: 95%; 
     height: 200px;
     border: 2px solid black;
@@ -37,14 +48,14 @@
   }
 
 
-.image-type-2 {
+.comic-frame.type-2 {
     width: 95%; 
     height: 200px; 
     border: 2px solid black;
     clip-path: polygon(100% 100%,0% 100%,0% 0%,100% 10%);
 }
 
-.image-type-3 {
+.comic-frame.type-3 {
     position: relative;
     width: 95%;
     height: 200px; 
@@ -53,7 +64,7 @@
     margin-top: 10px;
 }
 
-.image-type-3:before {
+/* .image-type-3:before {
     position: absolute;
     top: 0;
     left: 0;
@@ -61,24 +72,25 @@
     height: 100%;
     border: 10px solid black;
     clip-path: polygon(100% 90%, 0% 100%, 0% 0%, 100% 0%);
-    z-index: -1; /* Send behind the image */
+    z-index: -1; Send behind the image
 }
+*/
 
-.image-type-4 {
+.comic-frame.type-4 {
     width: 95%; 
     height: 200px; 
     border: 2px solid black;
     clip-path: polygon(100% 100%,0% 100%,0% 10%,100% 0%);
 }
 
-.image-type-5 {
+.comic-frame.type-5 {
     width: 95%; 
     height: 200px; 
     border: 2px solid black;
     clip-path: polygon(90% 100%,0% 100%,0% 10%,100% 0%);
 }
 
-.image-type-6 {
+.comic-frame.type-6 {
     width: 95%; 
     height: 200px; 
     border: 2px solid black;

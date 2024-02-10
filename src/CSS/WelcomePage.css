@@ -74,16 +74,19 @@ button:hover {
   background-color: #9fcbee;
 }
 
-
-.button-container img {
-  width: 20px;
-  height: 20px;
-}
-
-.screen-container .row{
+.carousel-button-container {
+  width: 7rem;
+  height: 5rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 1rem;
+}
+
+.carousel-button-container button {
+  width: 3rem;
+  height: 3rem;
+  padding: 10px;
 }
 
 .input-box {

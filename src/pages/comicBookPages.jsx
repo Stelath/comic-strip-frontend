@@ -7,20 +7,15 @@ export default function layout4_1() {
 
     return (
         <div>
-            <Container className="screen-container">
-                <Row>
-                    <Col className="image-container-left">
-                        <Image className="image-type-1" src={images[0]}  />
-                        <Image className="image-type-2" src={images[1]}  />
-                    </Col>
-                    <Col className="image-container-right">
-                        <Image className="image-type-3" src={images[2]} fluid />
-                        <Image className="image-type-4" src={images[3]} fluid />
-                    </Col>
-                </Row>
-            </Container>
-            <layout4_2 images={images} /> 
-            <layout4_3 images={images} />
+            <div className="screen-container">
+                <Image className="comic-frame type-1" src={images[0]}  />
+                <Image className="comic-frame type-2" src={images[1]}  />
+                
+                <Image className="comic-frame type-3" src={images[2]} />
+                <Image className="comic-frame type-4" src={images[3]} />
+            </div>
+            {/* <layout4_2 images={images} /> 
+            <layout4_3 images={images} /> */}
         </div>
     );
 
