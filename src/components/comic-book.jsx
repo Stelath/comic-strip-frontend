@@ -1,5 +1,5 @@
 import { Row, Col, Image } from "react-bootstrap";
-import "../CSS/pages.css";
+import "@/css/pages.css";
 
 const ComicFrame = ({ image, type }) => {
   return (

@@ -8,10 +8,10 @@ import {
   Col,
   Image,
 } from "react-bootstrap";
-import "../CSS/WelcomePage.css";
+import "@/css/welcome-page.css";
 
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import ComicPageFrames from "./comicBookPages";
+import ComicPageFrames from "../components/comic-book";
 
 export default function MainLandingPage() {
   const [showButton, setShowButton] = useState(true);
