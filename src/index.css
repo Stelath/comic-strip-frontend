@@ -1,6 +1,6 @@
 @font-face {
 	font-family: 'BackIssues';
-	src: local('BackIssues'), url('./fonts/BackIssuesBB_reg.otf') format('otf');
+	src: local('BackIssuesRegular'), url('./fonts/BackIssuesRegular.otf') format('opentype');
 }  
 
 body {
@@ -11,7 +11,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  background-image: url("../public/images/background.png");
+  background-image: url("../public/images/comic-backgruond.webp");
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
