@@ -1,5 +1,15 @@
-.image-container-2 {
+.image-container-left {
     width: 25%;
+    border-bottom: 2px solid black;
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+}
+
+.image-container-right {
+    width: 25%;
+    border-bottom: 2px solid black;
+    border-top: 2px solid black;
+    border-right: 2px solid black;
 }
 
 .screen-container .row{
@@ -22,7 +32,8 @@
     height: 200px;
     border: 2px solid black;
     clip-path: polygon(100% 100%, 0% 90%, 0% 0%, 100% 0%);
-    object-fit: fill;
+    margin-bottom: -15px;
+    margin-top: 10px
   }
 
 
@@ -31,15 +42,26 @@
     height: 200px; 
     border: 2px solid black;
     clip-path: polygon(100% 100%,0% 100%,0% 0%,100% 10%);
-    object-fit: fill;
 }
 
 .image-type-3 {
+    position: relative;
     width: 95%;
     height: 200px; 
-    border: 2px solid black;
     clip-path: polygon(100% 90%,0% 100%,0% 0%,100% 0%);
-    object-fit: fill;
+    margin-bottom: -15px;
+    margin-top: 10px;
+}
+
+.image-type-3:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 10px solid black;
+    clip-path: polygon(100% 90%, 0% 100%, 0% 0%, 100% 0%);
+    z-index: -1; /* Send behind the image */
 }
 
 .image-type-4 {
@@ -47,5 +69,18 @@
     height: 200px; 
     border: 2px solid black;
     clip-path: polygon(100% 100%,0% 100%,0% 10%,100% 0%);
-    object-fit: fill;
+}
+
+.image-type-5 {
+    width: 95%; 
+    height: 200px; 
+    border: 2px solid black;
+    clip-path: polygon(90% 100%,0% 100%,0% 10%,100% 0%);
+}
+
+.image-type-6 {
+    width: 95%; 
+    height: 200px; 
+    border: 2px solid black;
+    clip-path: polygon(100% 100%,10% 100%,0% 10%,100% 0%);
 }

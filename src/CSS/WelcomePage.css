@@ -50,11 +50,12 @@ button:hover {
 }
 
 
-.image-container {
+/* .image-container {
   width: 25%;
-}
+} */
 
 .button-container {
+  margin-top: 20px;
   width: 10%;
 }
 
