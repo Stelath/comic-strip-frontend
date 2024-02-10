@@ -5,12 +5,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
 }
 
 /* Set font and background color */
 body {
   font-family: Arial, sans-serif;
-  background-color: #f2f2f2;
+  background-color: #ff2f00;
 }
 
 /* Set styles for headings */
@@ -35,10 +36,34 @@ a:hover {
   text-decoration: underline;
 }
 
+.welcome-screen-container{
+  align-items: center;
+  justify-content: center;
+  margin-top: 10%;
+}
+
+.comic-strip-header {
+  color: #9fcbee;
+  font-size: 4em;
+  font-family: "BackIssues";
+  
+}
+
+.ask-prompt-header {
+  color: #9fcbee;
+  font-size: 2em;
+  font-family: "BackIssues";
+}
+
+.button-container {
+  margin-top: 20px;
+  width: 10%;
+}
+
 /* Set styles for buttons */
 button {
   padding: 10px 20px;
-  background-color: #f44927;
+  background-color: #6497bf;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -46,25 +71,7 @@ button {
 }
 
 button:hover {
-  background-color: #ca2301ff;
-}
-
-
-/* .image-container {
-  width: 25%;
-} */
-
-.button-container {
-  margin-top: 20px;
-  width: 10%;
-}
-
-.image-container img {
-  width: 95%; /* Change the width value as per your requirement */
-  height: 200px; /* Change the height value as per your requirement */
-  border: 2px solid black;
-  clip-path: polygon(100% 100%, 0% 100%, 0% 0%, 100% 0%);
-  object-fit: fill;
+  background-color: #9fcbee;
 }
 
 
@@ -78,3 +85,16 @@ button:hover {
   justify-content: center;
   align-items: center;
 }
+
+.input-box {
+    width: 50%;
+    height: 150px;
+    border: 3px solid #6497bf; /* Switched the border color */
+    border-radius: 5px;
+    background-color: #9fcbee; /* Switched the background color */
+    
+  }
+
+  .input-box::placeholder {
+    font-size: 1em; /* Adjust the font size as needed */
+  }

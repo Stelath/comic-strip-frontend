@@ -44,21 +44,23 @@ export default function MainLandingPage() {
         <Container>
             {!isSubmitted && (   
                 <div>
-                    <h1>Welcome</h1>
-                    <h6>
-                        Please enter a prompt to get started.
-                    </h6>
-                    <Form>
-                        <Form.Control
-                            as="textarea"
-                            rows={4} // Adjust the number of rows to make the area bigger
-                            placeholder="prompt ..."
-                            value={prompt}
-                            onChange={(e) => setPrompt(e.target.value)}
-                            style={{ width: "300px", height: "150px" }} // Add width and height here
-                        />
-                    </Form>
-                    {showButton && <Button onClick={handleSubmit} style={{ width: "200px", height: "50px" }}>Submit</Button>}
+                    <Container className="welcome-screen-container">
+                        <h1 className="comic-strip-header">COMIC STRIP</h1>
+                        <h5 className="ask-prompt-header" style={{ marginTop: "20px" }}>
+                            Please enter a prompt to get started.
+                        </h5>
+                        <Form>
+                            <Form.Control
+                                className="input-box"
+                                as="textarea"
+                                rows={5} // Adjust the number of rows to make the area bigger
+                                placeholder="prompt ..."
+                                value={prompt}
+                                onChange={(e) => setPrompt(e.target.value)}
+                            />
+                        </Form>
+                        {showButton && <Button onClick={handleSubmit} style={{ width: "200px", height: "50px" }}>Submit</Button>}
+                    </Container>
                 </div>
             )}
             {isSubmitted && (
