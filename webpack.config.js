@@ -13,6 +13,7 @@ module.exports = {
     extensions: ['.js', '.jsx'],
     alias: {
       '@': path.resolve(__dirname, 'src/'),
+      '/public': path.resolve(__dirname, 'public/'),
     }
   },
   devtool: 'inline-source-map',
@@ -26,7 +27,7 @@ module.exports = {
           options: {
             presets: [
               ['@babel/preset-env', { targets: "defaults" }],
-              ['@babel/preset-react', { targets: "defaults" }]
+              ['@babel/preset-react', {runtime: "automatic"}]
             ],
             plugins: [
               "@babel/plugin-syntax-dynamic-import",
@@ -56,7 +57,11 @@ module.exports = {
       {    
         test: /\.(woff|woff2|eot|ttf|otf)$/,
         loader: "file-loader"
-      }
+      },
+      {
+        test: /\.(jpe?g|svg|png|gif|ico|eot|ttf|woff2?)(\?v=\d+\.\d+\.\d+)?$/i,
+        type: 'asset/resource',
+      },
     ]
   },
   plugins: [
