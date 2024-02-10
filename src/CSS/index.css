@@ -1,6 +1,10 @@
 @font-face {
 	font-family: 'BackIssues';
-	src: local('BackIssuesRegular'), url('../fonts/BackIssuesRegular.otf') format('opentype');
+	src: local('BackIssuesRegular'),
+    url('../fonts/BackIssuesRegular.ttf') format('truetype'),
+    url('../fonts/BackIssuesRegular.otf') format('opentype'),
+    url('../fonts/BackIssuesRegular.woff2') format('woff2'),
+    url('../fonts/BackIssuesRegular.woff') format('woff');
 }  
 
 body {
