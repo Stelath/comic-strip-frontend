@@ -40,33 +40,11 @@ module.exports = {
       {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
-        // use: [
-        //   {
-        //     loader: 'style-loader'
-        //   },
-        //   {
-        //     loader: 'css-loader',
-        //     // options: {
-        //     //   modules: {
-        //     //     localsConvention: 'camelCase',
-        //     //   },
-        //     //   sourceMap: true
-        //     // }
-        //   }
-        // ]
       },
       {
-        test: /\.(woff(2)?|ttf|eot|otf)(\?v=\d+\.\d+\.\d+)?$/,
-        use: [
-          {
-            loader: "file-loader",
-            options: {
-              name: "[name].[ext]",
-              outputPath: "fonts/",
-            },
-          },
-        ],
-      }
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        type: 'asset/resource',
+       }
     ]
   },
   plugins: [
