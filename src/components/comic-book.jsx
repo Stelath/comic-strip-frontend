@@ -18,39 +18,33 @@ export default function ComicPageFrames({images, layoutNumber}) {
   const layoutType = images.length;
   console.log(images);
   console.log(layoutType);
-  if (layoutType === 6) {
+  if (layoutType <= 6) {
     switch (layoutNumber) {
       case 0:
-        return (<LayoutFourZero images={images} />);
+        return (<LayoutSixZero images={images} />);
       case 1:
         return (<LayoutFourOne images={images} />);
       case 2:
         return (<LayoutFourTwo images={images} />);
       default:
-        return <div></div>;
-    }
-  } else if (layoutType === 5) {
-    switch (layoutNumber) {
-      case 1:
-        return layout5_3;
-      default:
-        return <div></div>;
+        return <div>
+          
+        </div>;
     }
   }
-
-  return <div></div>;
 }
 
-const LayoutFourZero = ({images}) => (
-  <div className="screen-container">
-    <ComicFrame image={images[0]} type={0} />
-    <ComicFrame image={images[1]} type={0} />
-    <ComicFrame image={images[2]} type={0} />
-    <ComicFrame image={images[3]} type={0} />
-    <ComicFrame image={images[4]} type={0} />
-    <ComicFrame image={images[5]} type={0} />
-  </div>
-);
+const LayoutSixZero = ({images, layoutNumber}) => {
+  const comicFrames = [];
+  for (let i = 0; i < layoutNumber; i++) {
+    comicFrames.push(<ComicFrame key={i} image={images[i]} type={0} />);
+  }
+  return (
+    <div className="screen-container">
+      {comicFrames}
+    </div>
+  );
+};
 
 const LayoutFourOne = ({images}) => (
   <div className="screen-container">

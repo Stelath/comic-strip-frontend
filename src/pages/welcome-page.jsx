@@ -22,6 +22,8 @@ export default function MainLandingPage() {
   const [progress, setProgress] = useState(20);
   const [isLoading, setIsLoading] = useState(false); //TODO: Set this to true while it is loading
   const [frames, setFrames] = useState(4); //TODO: Pass this variable to the backend
+  const [page, setPage] = useState(0);
+  const dummyImages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]; //TODO: Replace this with the actual image set
 
   const [jobID, setJobID] = useState("");
 
@@ -126,12 +128,16 @@ export default function MainLandingPage() {
               />
             </div>
             <div className="carousel-button-container">
+              {((dummyImages.length-1 / 6)===page) && (
               <button className="">
                 <ArrowLeft />
               </button>
+              )}
+              {page===0 && (
               <button>
                 <ArrowRight />
               </button>
+              )}
             </div>
           </div>
         </div>
