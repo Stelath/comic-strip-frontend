@@ -13,7 +13,7 @@ import "@/css/welcome-page.css";
 
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import ComicPageFrames from "../components/comic-book";
-import { sendPrompt, checkJobStatus } from "../services/comicStripApi";
+import { sendPrompt, checkJobStatus, pollJobStatus } from "../services/comicStripApi";
 
 export default function MainLandingPage() {
   const [showButton, setShowButton] = useState(true);
@@ -37,6 +37,22 @@ export default function MainLandingPage() {
 
   const [jobID, setJobID] = useState("");
 
+  const failedJobCallback = () => {
+    setIsLoading(false);
+    setShowButton(true);
+    setIsSubmitted(false);
+  }
+
+  const updateJobStatus = (data) => {
+    setProgress(data.progress * 100);
+  }
+
+  const completedJobCallback = (data) => {
+    setTitle(data.title);
+    setFrames(data.frames);
+    setIsLoading(false);
+  }
+
   const handleSubmit = () => {
       setShowButton(false);
 
@@ -46,15 +62,11 @@ export default function MainLandingPage() {
         setIsSubmitted(true);
         setIsLoading(true);
         
-        checkJobStatus(data.jobID).then((data) => {
-          console.log(data);
-          if (data.status === "completed") {
-            setIsLoading(false);
-            setTitle(data.title);
-          } else {
-            setProgress(data.progress);
-          }
-        });
+        pollJobStatus(data.jobID, updateJobStatus, completedJobCallback, failedJobCallback);
+      }).catch((error) => {
+        console.error("An error occurred:", error);
+        setShowButton(true);
+        setIsSubmitted(false);
       });
     };
 
