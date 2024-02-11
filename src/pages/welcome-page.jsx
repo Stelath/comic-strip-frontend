@@ -7,6 +7,7 @@ import {
   Row,
   Col,
   Image,
+  ProgressBar,
 } from "react-bootstrap";
 import "@/css/welcome-page.css";
 
@@ -17,7 +18,9 @@ export default function MainLandingPage() {
   const [showButton, setShowButton] = useState(true);
   const [prompt, setPrompt] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const title = "The Adventures of Superhero";
+  const [title, setTitle] = useState("The Adventures of Superhero");
+  const [progress, setProgress] = useState(0);
+  const [isLoading, setIsLoading] = useState(false); //TODO: Set this to true while it is loading
 
   const [jobID, setJobID] = useState("");
 
@@ -46,9 +49,6 @@ export default function MainLandingPage() {
     };
 
   return (
-    // <div>
-    //     <img class="img-responsive" src="/images/img1.jpg"/>
-    // </div>
     <div className="page">
       {!isSubmitted && (
           <div className="welcome-screen-container">
@@ -81,12 +81,27 @@ export default function MainLandingPage() {
             </div>
         </div>
       )}
+      {isSubmitted && isLoading && (
+        <div className="progress-bar-container">
+          <ProgressBar now={progress} label={`${progress}%`} />
+        </div>
+      )}
       {isSubmitted && (
         <div>
-            <div className="title-text">{title}</div>
+          <div className="title-text">{title}</div>
           <div id="comic-container">
             <div className="comic-page">
-                <ComicPageFrames images={["/images/img1.jpg", "/images/img2.jpg", "/images/img3.jpg", "/images/img4.png", "/images/img4.png", "images/img6.jpg"]} layoutNumber={0} />
+              <ComicPageFrames
+                images={[
+                  "/images/img1.jpg",
+                  "/images/img2.jpg",
+                  "/images/img3.jpg",
+                  "/images/img4.png",
+                  "/images/img4.png",
+                  "images/img6.jpg",
+                ]}
+                layoutNumber={0}
+              />
             </div>
             <div className="carousel-button-container">
               <button className="">
