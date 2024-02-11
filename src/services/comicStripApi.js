@@ -44,7 +44,7 @@ export const pollJobStatus = async (jobID, loadingCallback, completedCallback, f
             return;
         }
 
-        if (data.status.toLowerCase() !== "completed") {
+        if (data.currentState.toLowerCase() !== "completed") {
             loadingCallback(data);
         } else {
             clearInterval(interval);
