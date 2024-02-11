@@ -78,38 +78,37 @@ export default function MainLandingPage() {
               Please enter a prompt to get started.
               </span>
             </h5>
-          </div>
-          <Form className="centered-form">
-            <Form.Control
-              className="input-box"
-              as="textarea"
-              rows={5} // Adjust the number of rows to make the area bigger
-              placeholder="prompt ..."
-              value={prompt}
-              onChange={(e) => setPrompt(e.target.value)}
-            />
-          </Form>
-          {showButton && (
-            <div className="submit-button-centering">
-              <Button
-                class="submit-button"
-                onClick={handleSubmit}
-              >
-                Submit
-              </Button>
-            </div>
-          )}
-        {/* </Container> */}
-            </div>
+            <Form className="centered-form">
+              <Form.Control
+                className="input-box"
+                as="textarea"
+                rows={5} // Adjust the number of rows to make the area bigger
+                placeholder="prompt ..."
+                value={prompt}
+                onChange={(e) => setPrompt(e.target.value)}
+              />
+            </Form>
+            {showButton && (
+              <div className="submit-button-centering">
+                <Button
+                  class="submit-button"
+                  onClick={handleSubmit}
+                >
+                  Submit
+                </Button>
+              </div>
+            )}
+          </Container>
+        </div>
       )}
       {isSubmitted && (
         <div>
-          <h1 className="title-text">Sample Title</h1>
+          <h1>Submitted Text</h1>
           <div id="comic-container">
             <div className="comic-page">
-                <ComicPageFrames images={["/images/img1.jpg", "/images/img2.jpg", "/images/img3.jpg", "/images/img5.png", "/images/img4.png", "images/img6.jpg"]} layoutNumber={0} />
+                <ComicPageFrames images={["/images/img1.jpg", "/images/img2.jpg", "/images/img3.jpg", "/images/img4.png"]} layoutNumber={1} />
             </div>
-            <div className="carousel-button-container center">
+            <div className="carousel-button-container">
               <button className="">
                 <ArrowLeft />
               </button>
