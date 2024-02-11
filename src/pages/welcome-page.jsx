@@ -13,13 +13,14 @@ import "@/css/welcome-page.css";
 
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import ComicPageFrames from "../components/comic-book";
+import { sendPrompt, checkJobStatus } from "../services/comicStripApi";
 
 export default function MainLandingPage() {
   const [showButton, setShowButton] = useState(true);
   const [prompt, setPrompt] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [title, setTitle] = useState("The Adventures of Superhero");
-  const [progress, setProgress] = useState(20);
+  const [progress, setProgress] = useState(0);
   const [isLoading, setIsLoading] = useState(false); //TODO: Set this to true while it is loading
   const [frameCount, setFrameCount] = useState(4); //TODO: Pass this variable to the backend
   const [page, setPage] = useState(0);
@@ -37,27 +38,24 @@ export default function MainLandingPage() {
   const [jobID, setJobID] = useState("");
 
   const handleSubmit = () => {
-    setShowButton(false);
+      setShowButton(false);
 
-        // Send a post API request to "/api/prompt" with the content of the "prompt" variable
-        fetch("http://127.0.0.1:5000/api/prompt", {
-          method: "POST",
-          body: JSON.stringify({ prompt }),
-          headers: {
-            "Content-Type": "application/json",
-          },
-        })
-          .then((response) => response.json())
-          .then((data) => {
-            // Handle the response data
-            console.log(data);
-          })
-          .catch((error) => {
-            // Handle the error
-            console.error(error);
-          });
-
+      sendPrompt(prompt).then((data) => {
+        console.log(data);
+        setJobID(data.jobID);
         setIsSubmitted(true);
+        setIsLoading(true);
+        
+        checkJobStatus(data.jobID).then((data) => {
+          console.log(data);
+          if (data.status === "completed") {
+            setIsLoading(false);
+            setTitle(data.title);
+          } else {
+            setProgress(data.progress);
+          }
+        });
+      });
     };
 
     const handleChange = (event) => {
