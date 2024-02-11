@@ -1,4 +1,5 @@
 const path = require('path');
+const HttpsProxyAgent = require('https-proxy-agent');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const port = process.env.PORT || 3000;
@@ -57,6 +58,10 @@ module.exports = {
     host: 'localhost',
     port: port,
     historyApiFallback: true,
-    open: true
+    open: true,
+    proxy: {
+      '/api': 'http://127.0.0.1:5000',
+    },
+  
   }
 };
