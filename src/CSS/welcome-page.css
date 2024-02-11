@@ -216,6 +216,72 @@ button:hover {
   width: 10%;
 }
 
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  text-align: center;
+}
+
+.progress {
+  padding: 6px;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 6px;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.progress-bar { 
+  height: 50px;
+  background-color: #ee303c;  
+  border-radius: 4px; 
+  transition: 0.4s linear;  
+  transition-property: width, background-color;    
+}
+
+.progress-striped .progress-bar {   
+  background-color: lightgreen; 
+  width: 100%; 
+  background-image: linear-gradient(
+        45deg, lightgreen 25%, 
+        #ccffcc 25%, #ccffcc 50%, 
+        lightgreen 50%, lightgreen 75%,
+        #ccffcc 75%, #ccffcc); 
+      animation: progressAnimationStrike 6s;
+    }
+
+/* .progress {
+  appearance: none;
+  width: 90%;
+  height: 10px;
+  background-color: #313030;
+  border-radius: 5px;
+  margin: 15px 0;
+  position: relative; /* Added for positioning */
+/* } */
+
+/*
+.progress-bar {
+
+  height: 10%; Changed height to match parent
+  width: 90%; Initially, the width is 0, it will be dynamically adjusted
+  background: linear-gradient(to right, #ff5500, #ffcc00); Background color for the progress
+  border-radius: 5px; Adjusted to match parent
+  position: absolute; Positioning
+  left: 50%; Set the left position to 50%
+  transform: translate(-50%, 500%); Move the progress bar horizontally and vertically by half of its width and height
+}
+
+/*
+.progress-value {
+  height: 100%;
+  background: linear-gradient(to bottom, #00ff00 0%, #00ff00 50%, transparent 50%, transparent 100%);
+  border-radius: 5px;
+} */
+
+
+
 .carousel-button-container {
   width: 7rem;
   height: 5rem;

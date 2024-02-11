@@ -19,8 +19,8 @@ export default function MainLandingPage() {
   const [prompt, setPrompt] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [title, setTitle] = useState("The Adventures of Superhero");
-  const [progress, setProgress] = useState(0);
-  const [isLoading, setIsLoading] = useState(false); //TODO: Set this to true while it is loading
+  const [progress, setProgress] = useState(20);
+  const [isLoading, setIsLoading] = useState(true); //TODO: Set this to true while it is loading
 
   const [jobID, setJobID] = useState("");
 
@@ -82,11 +82,13 @@ export default function MainLandingPage() {
         </div>
       )}
       {isSubmitted && isLoading && (
-        <div className="progress-bar-container">
-          <ProgressBar now={progress} label={`${progress}%`} />
+        <div className="container">
+          <div className="progress progress-striped">
+            <div className="progress-bar" style={{ width: `${progress}%` }}></div>
+          </div>
         </div>
       )}
-      {isSubmitted && (
+      {isSubmitted && !isLoading && (
         <div>
           <div className="title-text">{title}</div>
           <div id="comic-container">
