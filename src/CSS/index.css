@@ -3,10 +3,10 @@
   font-style: normal;
   font-weight: 400;
 	src: local('BackIssuesRegular'),
-    url('/public/fonts/BackIssuesRegular.ttf') format('truetype'),
-    url('/public/fonts/BackIssuesRegular.otf') format('opentype'),
-    url('/public/fonts/BackIssuesRegular.woff2') format('woff2'),
-    url('/public/fonts/BackIssuesRegular.woff') format('woff');
+  url('@/fonts/BackIssuesRegular.woff') format('woff'),
+  url('@/fonts/BackIssuesRegular.woff2') format('woff2'),
+  url('@/fonts/BackIssuesRegular.otf') format('opentype'),
+  url('@/fonts/BackIssuesRegular.ttf') format('truetype');
 }  
 
 body {

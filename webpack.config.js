@@ -14,6 +14,7 @@ module.exports = {
     alias: {
       '@': path.resolve(__dirname, 'src/'),
       '/public': path.resolve(__dirname, 'public/'),
+      '/fonts': path.resolve(__dirname, 'fonts/'),
     }
   },
   devtool: 'inline-source-map',
@@ -54,14 +55,18 @@ module.exports = {
         //   }
         // ]
       },
-      {    
-        test: /\.(woff|woff2|eot|ttf|otf)$/,
-        loader: "file-loader"
-      },
       {
-        test: /\.(jpe?g|svg|png|gif|ico|eot|ttf|woff2?)(\?v=\d+\.\d+\.\d+)?$/i,
-        type: 'asset/resource',
-      },
+        test: /\.(woff(2)?|ttf|eot|otf)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "[name].[ext]",
+              outputPath: "fonts/",
+            },
+          },
+        ],
+      }
     ]
   },
   plugins: [
