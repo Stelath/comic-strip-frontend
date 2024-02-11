@@ -1,4 +1,4 @@
-export const sendPrompt = async (prompt) => {
+export const sendPrompt = async (prompt, numImages) => {
     console.log("Sending Prompt...");
     try {
         const response = await fetch("/api/prompt", {
@@ -6,7 +6,7 @@ export const sendPrompt = async (prompt) => {
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({ prompt }),
+            body: JSON.stringify({ prompt, numImages }),
         });
         const data = await response.json();
         return data;

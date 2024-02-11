@@ -56,7 +56,7 @@ export default function MainLandingPage() {
   const handleSubmit = () => {
       setShowButton(false);
 
-      sendPrompt(prompt).then((data) => {
+      sendPrompt(prompt, frameCount).then((data) => {
         console.log(data);
         setJobID(data.jobID);
         setIsSubmitted(true);
