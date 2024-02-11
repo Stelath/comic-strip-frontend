@@ -14,14 +14,14 @@ const ComicFrame = ({ image, type }) => {
   );
 };
 
-export default function ComicPageFrames({images, layoutNumber}) {
-  const layoutType = images.length;
+export default function ComicPageFrames({images, layoutType}) {
+  const layoutNumber = images.length;
   console.log(images);
   console.log(layoutType);
-  if (layoutType <= 6) {
-    switch (layoutNumber) {
+  if (layoutType<=6) {
+    switch (layoutType) {
       case 0:
-        return (<LayoutSixZero images={images} />);
+        return (<LayoutSixZero images={images} layoutNumber={layoutNumber} />);
       case 1:
         return (<LayoutFourOne images={images} />);
       case 2:
@@ -39,6 +39,14 @@ const LayoutSixZero = ({images, layoutNumber}) => {
   for (let i = 0; i < layoutNumber; i++) {
     comicFrames.push(<ComicFrame key={i} image={images[i]} type={0} />);
   }
+  
+  if (layoutNumber < 6) {
+    const emptyFrames = 6 - layoutNumber;
+    for (let i = 0; i < emptyFrames; i++) {
+      comicFrames.push(<div key={layoutNumber + i} className="empty-frame" />);
+    }
+  }
+  
   return (
     <div className="screen-container">
       {comicFrames}

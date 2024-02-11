@@ -124,11 +124,11 @@ export default function MainLandingPage() {
                   "/images/img4.png",
                   "images/img6.jpg",
                 ]}
-                layoutNumber={0}
+                layoutType={0}
               />
             </div>
             <div className="carousel-button-container">
-              {((dummyImages.length-1 / 6)===page) && (
+                {parseInt((dummyImages.length-1) / 6)===page && (
               <button className="">
                 <ArrowLeft />
               </button>
