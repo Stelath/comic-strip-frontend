@@ -3,7 +3,8 @@ import "@/css/pages.css";
 
 const ComicFrame = ({ image, type }) => {
   return (
-    <div className={`comic-frame-wrapper type-${type}`}>
+    <div>
+    {/* className={`comic-frame-wrapper type-${type}`}> */}
       <img
         alt="Comic Frame"
         className={`comic-frame type-${type}`}
@@ -17,8 +18,10 @@ export default function ComicPageFrames({images, layoutNumber}) {
   const layoutType = images.length;
   console.log(images);
   console.log(layoutType);
-  if (layoutType === 4) {
+  if (layoutType === 6) {
     switch (layoutNumber) {
+      case 0:
+        return (<LayoutFourZero images={images} />);
       case 1:
         return (<LayoutFourOne images={images} />);
       case 2:
@@ -38,6 +41,17 @@ export default function ComicPageFrames({images, layoutNumber}) {
   return <div></div>;
 }
 
+const LayoutFourZero = ({images}) => (
+  <div className="screen-container">
+    <ComicFrame image={images[0]} type={0} />
+    <ComicFrame image={images[1]} type={0} />
+    <ComicFrame image={images[2]} type={0} />
+    <ComicFrame image={images[3]} type={0} />
+    <ComicFrame image={images[4]} type={0} />
+    <ComicFrame image={images[5]} type={0} />
+  </div>
+);
+
 const LayoutFourOne = ({images}) => (
   <div className="screen-container">
     <ComicFrame image={images[0]} type={1} />
@@ -49,11 +63,12 @@ const LayoutFourOne = ({images}) => (
 
 const LayoutFourTwo = ({images}) => (
   <div className="screen-container">
-    <ComicFrame image={images[0]} type={1} />
-    <ComicFrame image={images[1]} type={2} />
-    <ComicFrame image={images[2]} type={3} />
-    <ComicFrame image={images[3]} type={4} />
+    <ComicFrame image={images[0]} type={0} />
+    <ComicFrame image={images[1]} type={0} />
+    <ComicFrame image={images[2]} type={5} />
+    <ComicFrame image={images[3]} type={6} />
   </div>
+
   //     <div>
   //         <Image src={images[0]} style={{ height: "300px" }} />
   //         <Image className="image-type-5" src={images[1]} />

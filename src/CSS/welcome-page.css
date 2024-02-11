@@ -11,6 +11,8 @@
 /* Set font and background color */
 body {
   font-family: Arial, sans-serif;
+  background-color: #ff2f00;
+  min-height: 80vh;
 }
 
 /* Set styles for headings */
@@ -35,14 +37,14 @@ a:hover {
   text-decoration: underline;
 }
 
-.welcome-screen-container{
+.welcome-screen{
   align-items: center;
   justify-content: center;
   margin-top: 3.5%;
 }
 
 .comic-strip-header {
-  color: #9fcbee;
+  color: white;
   font-size: 4em;
   font-family: "BackIssues";
   text-align: center;
@@ -55,19 +57,19 @@ a:hover {
 
 .strip-header-span{
   background-color: white;
-}
+} */
 
 .ask-prompt-header {
-  color: #9fcbee;
+  color: white;
   font-size: 2em;
   font-family: "BackIssues";
   text-align: center;
   margin-top: "20px";
 }
 
-.prompt-header-span{
+/* .prompt-header-span{
   background-color: white;
-}
+} */
 
 .centered-form{
   display: flex;
@@ -109,11 +111,18 @@ button:hover {
 }
 
 .comic-page {
-  width: 35%;
+  width: 25%; /* Set to 25 if you don't want to scroll */
   aspect-ratio: 2/3;
   border: 3px solid #6497bf; 
   border-radius: 15px;
-  background-color: #ffffff;
+  background-color: #fef1d2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  row-gap: 20px;
+  column-gap: 0px;
+  height: 100%;
+  margin: 0 auto;
 }
 
 .carousel-button-container {
@@ -143,3 +152,94 @@ button:hover {
   .input-box::placeholder {
     font-size: 1em; /* Adjust the font size as needed */
   }
+
+  .title-text{
+    font-size: 2em;
+    text-align: center;
+    margin-top: 30px;
+  }
+
+.compic-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 25%;
+  height: auto;
+}
+
+.centered-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.submit-button-centering {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.submit-button {
+  font-size: 4em;
+  width: 200px; /* Remove the quotes around the width value */
+  height: 50px; /* Remove the quotes around the height value */
+}
+
+.button-container {
+  margin-top: 20px;
+  width: 10%;
+}
+
+.carousel-button-container {
+  width: 7rem;
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 0 auto; /* Center the carousel button container horizontally */
+}
+
+.carousel-button-container button {
+  width: 3rem;
+  height: 3rem;
+  padding: 10px;
+}
+
+.input-box {
+  width: 50%;
+  height: 150px;
+  border: 3px solid #6497bf;
+  border-radius: 5px;
+  background-color: #9fcbee;
+}
+
+.input-box::placeholder {
+  font-size: 1em;
+}
+
+.title-text {
+  font-size: 2em;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.compic-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 25%;
+  height: auto;
+}
+
+.comic-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}

@@ -1,7 +1,7 @@
 .screen-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* Creates 4 columns */
-    grid-template-rows: repeat(2, 1fr); /* Creates 4 rows */
+    grid-template-rows: repeat(3, 1fr); /* Creates 4 rows */
     gap: 10px; /* Optional: Adds some space between grid items */
     padding: 10px; /* Optional: Adds some padding around the grid */
 }
@@ -31,6 +31,15 @@
     height: 100%;
     object-fit: cover;
     margin: 0;
+}
+
+.comic-frame.type-0 {
+    clip-path: polygon(100% 100%, 0% 100%, 0% 0%, 100% 0%);
+    border: 3px solid black;
+}
+
+.comic-frame-wrapper.type-0 {
+    clip-path: polygon(100% 100%, 0% 100%, 0% 0%, 100% 0%);
 }
 
 .comic-frame.type-1 {
