@@ -18,10 +18,31 @@ export default function MainLandingPage() {
   const [prompt, setPrompt] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
 
+  const [jobID, setJobID] = useState("");
+
   const handleSubmit = () => {
     setShowButton(false);
-    setIsSubmitted(true);
-  };
+
+        // Send a post API request to "/api/prompt" with the content of the "prompt" variable
+        fetch("http://127.0.0.1:5000/api/prompt", {
+          method: "POST",
+          body: JSON.stringify({ prompt }),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            // Handle the response data
+            console.log(data);
+          })
+          .catch((error) => {
+            // Handle the error
+            console.error(error);
+          });
+
+        setIsSubmitted(true);
+    };
 
   // const makePage = (images) => {
   //   return (
