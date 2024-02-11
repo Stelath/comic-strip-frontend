@@ -83,7 +83,7 @@ export default function MainLandingPage() {
       )}
       {isSubmitted && (
         <div>
-            <h1 className="title-text">{title}</h1>
+            <div className="title-text">{title}</div>
           <div id="comic-container">
             <div className="comic-page">
                 <ComicPageFrames images={["/images/img1.jpg", "/images/img2.jpg", "/images/img3.jpg", "/images/img4.png", "/images/img4.png", "images/img6.jpg"]} layoutNumber={0} />

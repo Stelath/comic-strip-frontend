@@ -126,7 +126,7 @@ button:hover {
 }
 
 .comic-page {
-  width: 25%; /* Set to 25 if you don't want to scroll */
+  width: 23%; /* Set to 23 if you don't want to scroll */
   aspect-ratio: 2/3;
   border: 3px solid #6497bf; 
   border-radius: 15px;
@@ -170,9 +170,15 @@ button:hover {
   }
 
   .title-text{
+    color: white;
     font-size: 2em;
-    text-align: center;
-    margin-top: 30px;
+    font-family: "BackIssues";
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    height: auto;
+    font-weight: bold;
+    text-shadow: -1.5px -1.5px 0 black, 1.5px -1.5px 0 black, -1.5px 1.5px 0 black, 1.5px 1.5px 0 black;
   }
 
 .compic-container{
@@ -238,11 +244,6 @@ button:hover {
   font-size: 1em;
 }
 
-.title-text {
-  font-size: 2em;
-  text-align: center;
-  margin-top: 30px;
-}
 
 .compic-container {
   display: flex;

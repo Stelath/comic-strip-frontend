@@ -21,7 +21,7 @@ body {
 	background-repeat: repeat-y;
   background-size: cover;
 	background-position: center;
-
+  line-height: 3em;
   min-height: 100vh;
 }
 
