@@ -68,45 +68,47 @@ export default function MainLandingPage() {
     // </div>
     <Container>
       {!isSubmitted && (
-        <div>
-          <Container className="welcome-screen-container">
+        <div className="welcome-screen">
+          <div class="box" className="background-box">
+          {/* <Container className="welcome-screen-container"> */}
             <h1 className="comic-strip-header"><span className="strip-header-span">COMIC STRIP</span></h1>
             <h5 className="ask-prompt-header">
               <span className="prompt-header-span">
               Please enter a prompt to get started.
               </span>
             </h5>
-            <Form className="centered-form">
-              <Form.Control
-                className="input-box"
-                as="textarea"
-                rows={5} // Adjust the number of rows to make the area bigger
-                placeholder="prompt ..."
-                value={prompt}
-                onChange={(e) => setPrompt(e.target.value)}
-              />
-            </Form>
-            {showButton && (
-              <div className="submit-button-centering">
-                <Button
-                  class="submit-button"
-                  onClick={handleSubmit}
-                >
-                  Submit
-                </Button>
-              </div>
-            )}
-          </Container>
-        </div>
+          </div>
+          <Form className="centered-form">
+            <Form.Control
+              className="input-box"
+              as="textarea"
+              rows={5} // Adjust the number of rows to make the area bigger
+              placeholder="prompt ..."
+              value={prompt}
+              onChange={(e) => setPrompt(e.target.value)}
+            />
+          </Form>
+          {showButton && (
+            <div className="submit-button-centering">
+              <Button
+                class="submit-button"
+                onClick={handleSubmit}
+              >
+                Submit
+              </Button>
+            </div>
+          )}
+        {/* </Container> */}
+            </div>
       )}
       {isSubmitted && (
         <div>
-          <h1>Submitted Text</h1>
+          <h1 className="title-text">Sample Title</h1>
           <div id="comic-container">
             <div className="comic-page">
-                <ComicPageFrames images={["/images/img1.jpg", "/images/img2.jpg", "/images/img3.jpg", "/images/img4.png"]} layoutNumber={1} />
+                <ComicPageFrames images={["/images/img1.jpg", "/images/img2.jpg", "/images/img3.jpg", "/images/img5.png", "/images/img4.png", "images/img6.jpg"]} layoutNumber={0} />
             </div>
-            <div className="carousel-button-container">
+            <div className="carousel-button-container center">
               <button className="">
                 <ArrowLeft />
               </button>
