@@ -15,6 +15,14 @@ body {
   min-height: 80vh;
 }
 
+#root {
+  height: 100%;
+}
+
+.App {
+  height: 100%;
+}
+
 /* Set styles for headings */
 h1, h2, h3 {
   color: #333;
@@ -37,57 +45,65 @@ a:hover {
   text-decoration: underline;
 }
 
-.welcome-screen{
-  align-items: center;
-  justify-content: center;
-  margin-top: 3.5%;
+.page {
+  height: 100%;
 }
 
-.comic-strip-header {
-  color: white;
-  font-size: 4em;
-  font-family: "BackIssues";
-  text-align: center;
+.welcome-screen-container{
+  display: grid;
+  grid-template-rows: 1fr 3fr; /* Creates 2 rows */
+  height: 100%;
+}
+
+.welcome-screen-header{
+  /* flex-direction: column; */
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  height: 100%;
 }
 
 .comic-strip-logo {
-  width: 30%;
+  width: 20%;
   height: auto;
 }
 
-.strip-header-span{
-  background-color: white;
-} */
+.welcome-screen-body{
+  display: grid;
+  grid-template-rows: 1fr 2r 2fr;
+  height: 57%;
+}
 
 .ask-prompt-header {
   color: white;
   font-size: 2em;
   font-family: "BackIssues";
-  text-align: center;
-}
-
-/* .prompt-header-span{
-  background-color: white;
-} */
-
-.centered-form{
-  display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
+  display: flex;
+  height: auto;
+}
+
+.centered-form{
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  height: auto;
+  font-family: "BackIssues";
 }
 
 .submit-button-centering{
-  margin-top: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.submit-button{
-  font-size: 4em;
+.submit-button-centering button{
+  font-size: 2em;
+  font-family: "BackIssues";
   width: "200px";
-  height: "50px"
+  height: "50px";
+  border: 2px solid black;
 }
 
 .button-container {
@@ -145,7 +161,8 @@ button:hover {
     border: 3px solid #6497bf; /* Switched the border color */
     border-radius: 5px;
     background-color: #9fcbee; /* Switched the background color */
-    
+    font-family: "BackIssues";
+    font-size: 1em; /* Adjust the font size as needed */
   }
 
   .input-box::placeholder {
