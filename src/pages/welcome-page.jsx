@@ -21,9 +21,18 @@ export default function MainLandingPage() {
   const [title, setTitle] = useState("The Adventures of Superhero");
   const [progress, setProgress] = useState(20);
   const [isLoading, setIsLoading] = useState(false); //TODO: Set this to true while it is loading
-  const [frames, setFrames] = useState(4); //TODO: Pass this variable to the backend
+  const [frameCount, setFrameCount] = useState(4); //TODO: Pass this variable to the backend
   const [page, setPage] = useState(0);
-  const dummyImages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]; //TODO: Replace this with the actual image set
+  const [frames, setFrames] = useState([
+    "/images/img1.jpg",
+    "/images/img2.jpg",
+    "/images/img3.jpg",
+    "/images/img4.png",
+    "/images/img5.png",
+    "/images/img6.jpg",
+    "/images/comic-strip-logo-2.webp",
+    "/images/comic-strip-logo.webp",
+    ]);
 
   const [jobID, setJobID] = useState("");
 
@@ -54,9 +63,9 @@ export default function MainLandingPage() {
     const handleChange = (event) => {
         const val = parseInt(event.target.value);  
         if (val >= 4) {
-          setFrames(val);
+          setFrameCount(val);
         } else {
-          setFrames(4); // Set a default value if the entered value is less than 4
+          setFrameCount(4); // Set a default value if the entered value is less than 4
         }
       };
 
@@ -94,7 +103,7 @@ export default function MainLandingPage() {
                         type="number" 
                         className="frame-counter-output" 
                         step="2" 
-                        value={frames} 
+                        value={frameCount} 
                         onChange={handleChange}
                         />
                     </div>
@@ -116,25 +125,18 @@ export default function MainLandingPage() {
           <div id="comic-container">
             <div className="comic-page">
               <ComicPageFrames
-                images={[
-                  "/images/img1.jpg",
-                  "/images/img2.jpg",
-                  "/images/img3.jpg",
-                  "/images/img4.png",
-                  "/images/img4.png",
-                  "images/img6.jpg",
-                ]}
+                images={frames.slice(6 * page, 6 * page + 6)}
                 layoutType={0}
               />
             </div>
             <div className="carousel-button-container">
-                {parseInt((dummyImages.length-1) / 6)===page && (
-              <button className="">
+                {page > 0 && (
+              <button className="" onClick={() => setPage(page - 1)}>
                 <ArrowLeft />
               </button>
               )}
-              {page===0 && (
-              <button>
+              {6 * (page+1) < frames.length && (
+              <button onClick={() => setPage(page + 1)}>
                 <ArrowRight />
               </button>
               )}
