@@ -20,7 +20,8 @@ export default function MainLandingPage() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [title, setTitle] = useState("The Adventures of Superhero");
   const [progress, setProgress] = useState(20);
-  const [isLoading, setIsLoading] = useState(true); //TODO: Set this to true while it is loading
+  const [isLoading, setIsLoading] = useState(false); //TODO: Set this to true while it is loading
+  const [frames, setFrames] = useState(4); //TODO: Pass this variable to the backend
 
   const [jobID, setJobID] = useState("");
 
@@ -47,6 +48,15 @@ export default function MainLandingPage() {
 
         setIsSubmitted(true);
     };
+
+    const handleChange = (event) => {
+        const val = parseInt(event.target.value);  
+        if (val >= 4) {
+          setFrames(val);
+        } else {
+          setFrames(4); // Set a default value if the entered value is less than 4
+        }
+      };
 
   return (
     <div className="page">
@@ -76,6 +86,16 @@ export default function MainLandingPage() {
                     onClick={handleSubmit}>
                     Submit
                   </Button>
+                  <div className="frame-counter">
+                      <label className="frame-counter-text">Frames:</label>
+                      <input 
+                        type="number" 
+                        className="frame-counter-output" 
+                        step="2" 
+                        value={frames} 
+                        onChange={handleChange}
+                        />
+                    </div>
                 </div>
               )}
             </div>

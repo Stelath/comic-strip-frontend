@@ -92,6 +92,28 @@ a:hover {
   font-family: "BackIssues";
 }
 
+.frame-counter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.frame-counter-text {
+  color: white;
+  font-size: 1em;
+  font-family: "BackIssues";
+  margin-left: 5px;
+  height: auto;
+}
+
+.frame-counter-output {
+  width: 10ch;
+  height: 2em;
+  border: 1px solid #6497bf; /* Switched the border color */
+  border-radius: 1px;
+  background-color: #9fcbee; /* Switched the background color */
+}
+
 .submit-button-centering{
   display: flex;
   justify-content: center;
@@ -162,7 +184,7 @@ button:hover {
     border-radius: 5px;
     background-color: #9fcbee; /* Switched the background color */
     font-family: "BackIssues";
-    font-size: 1em; /* Adjust the font size as needed */
+    font-size: 2em; /* Adjust the font size as needed */
   }
 
   .input-box::placeholder {
