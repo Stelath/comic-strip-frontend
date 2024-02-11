@@ -23,44 +23,44 @@ export default function MainLandingPage() {
     setIsSubmitted(true);
   };
 
-  const makePage = (images) => {
-    return (
-      <div>
-        <Row>
-          {images.slice(0, 2).map((image, index) => (
-            <Col
-              key={index}
-              className="image-container"
-              style={{ width: "50%" }}
-            >
-              <Image
-                src={image}
-                className={index === 0 ? "mr-2" : ""}
-                fluid
-                style={{ marginRight: "10px" }}
-              />
-            </Col>
-          ))}
-        </Row>
-        <Row>
-          {images.slice(2, 4).map((image, index) => (
-            <Col
-              key={index}
-              className="image-container"
-              style={{ width: "50%" }}
-            >
-              <Image
-                src={image}
-                className={index === 0 ? "mr-2" : ""}
-                fluid
-                style={{ marginRight: "10px" }}
-              />
-            </Col>
-          ))}
-        </Row>
-      </div>
-    );
-  };
+  // const makePage = (images) => {
+  //   return (
+  //     <div>
+  //       <Row>
+  //         {images.slice(0, 2).map((image, index) => (
+  //           <Col
+  //             key={index}
+  //             className="image-container"
+  //             style={{ width: "50%" }}
+  //           >
+  //             <Image
+  //               src={image}
+  //               className={index === 0 ? "mr-2" : ""}
+  //               fluid
+  //               style={{ marginRight: "10px" }}
+  //             />
+  //           </Col>
+  //         ))}
+  //       </Row>
+  //       <Row>
+  //         {images.slice(2, 4).map((image, index) => (
+  //           <Col
+  //             key={index}
+  //             className="image-container"
+  //             style={{ width: "50%" }}
+  //           >
+  //             <Image
+  //               src={image}
+  //               className={index === 0 ? "mr-2" : ""}
+  //               fluid
+  //               style={{ marginRight: "10px" }}
+  //             />
+  //           </Col>
+  //         ))}
+  //       </Row>
+  //     </div>
+  //   );
+  // };
 
   return (
     // <div>
@@ -70,11 +70,13 @@ export default function MainLandingPage() {
       {!isSubmitted && (
         <div>
           <Container className="welcome-screen-container">
-            <h1 className="comic-strip-header">COMIC STRIP</h1>
-            <h5 className="ask-prompt-header" style={{ marginTop: "20px" }}>
+            <h1 className="comic-strip-header"><span className="strip-header-span">COMIC STRIP</span></h1>
+            <h5 className="ask-prompt-header">
+              <span className="prompt-header-span">
               Please enter a prompt to get started.
+              </span>
             </h5>
-            <Form>
+            <Form className="centered-form">
               <Form.Control
                 className="input-box"
                 as="textarea"
@@ -85,12 +87,14 @@ export default function MainLandingPage() {
               />
             </Form>
             {showButton && (
-              <Button
-                onClick={handleSubmit}
-                style={{ width: "200px", height: "50px" }}
-              >
-                Submit
-              </Button>
+              <div className="submit-button-centering">
+                <Button
+                  class="submit-button"
+                  onClick={handleSubmit}
+                >
+                  Submit
+                </Button>
+              </div>
             )}
           </Container>
         </div>
