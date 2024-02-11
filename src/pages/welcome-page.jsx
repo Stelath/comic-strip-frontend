@@ -17,6 +17,7 @@ export default function MainLandingPage() {
   const [showButton, setShowButton] = useState(true);
   const [prompt, setPrompt] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const title = "The Adventures of Superhero";
 
   const handleSubmit = () => {
     setShowButton(false);
@@ -103,10 +104,10 @@ export default function MainLandingPage() {
       )}
       {isSubmitted && (
         <div>
-          <h1>Submitted Text</h1>
+            <h1 className="title-text">{title}</h1>
           <div id="comic-container">
             <div className="comic-page">
-                <ComicPageFrames images={["/images/img1.jpg", "/images/img2.jpg", "/images/img3.jpg", "/images/img4.png"]} layoutNumber={1} />
+                <ComicPageFrames images={["/images/img1.jpg", "/images/img2.jpg", "/images/img3.jpg", "/images/img4.png", "/images/img4.png", "images/img6.jpg"]} layoutNumber={0} />
             </div>
             <div className="carousel-button-container">
               <button className="">
