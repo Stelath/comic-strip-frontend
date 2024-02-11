@@ -17,9 +17,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  background-image: url("/public/images/comic-backgruond.webp");
-	background-repeat: no-repeat;
-	background-size: cover;
+  background-image: url("/public/vector-graphics/comic-background.svg");
+	background-repeat: repeat-y;
+  background-size: cover;
 	background-position: center;
 
   min-height: 100vh;

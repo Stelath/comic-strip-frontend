@@ -11,7 +11,6 @@
 /* Set font and background color */
 body {
   font-family: Arial, sans-serif;
-  background-color: #ff2f00;
 }
 
 /* Set styles for headings */
@@ -39,7 +38,7 @@ a:hover {
 .welcome-screen-container{
   align-items: center;
   justify-content: center;
-  margin-top: 10%;
+  margin-top: 3.5%;
 }
 
 .comic-strip-header {
@@ -47,6 +46,11 @@ a:hover {
   font-size: 4em;
   font-family: "BackIssues";
   text-align: center;
+}
+
+.comic-strip-logo {
+  width: 30%;
+  height: auto;
 }
 
 .strip-header-span{

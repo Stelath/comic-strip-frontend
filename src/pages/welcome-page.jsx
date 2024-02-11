@@ -70,7 +70,9 @@ export default function MainLandingPage() {
       {!isSubmitted && (
         <div>
           <Container className="welcome-screen-container">
-            <h1 className="comic-strip-header"><span className="strip-header-span">COMIC STRIP</span></h1>
+            <h1 className="comic-strip-header">
+              <img className="comic-strip-logo" src="/images/comic-strip-logo-2.webp" alt="logo" />
+            </h1>
             <h5 className="ask-prompt-header">
               <span className="prompt-header-span">
               Please enter a prompt to get started.
