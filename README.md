@@ -2,6 +2,8 @@
 ### UGAHacks-2024
 Check out our slideshow on how it works [here](https://docs.google.com/presentation/d/1VH_E38nki5E_Ua2MOe0nbFVQmln6dmZaD2rxQ9a5__M/edit?usp=sharing)!
 
+And check out our DevPost on the project [here](https://devpost.com/software/comic-strip-c0jw72)!
+
 ## Team Members
 - Alex Korte - [korte@clemson.edu](mailto:korte@clemson.edu)
 - Alex Duncan - [afdunca@clemson.edu](mailto:afdunca@clemson.edu)
