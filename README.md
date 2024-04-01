@@ -1,11 +1,11 @@
-# UGAHacks-2024
-
 # Comic Strip
+### UGAHacks-2024
+Check out our slideshow on how it works [here](https://docs.google.com/presentation/d/1VH_E38nki5E_Ua2MOe0nbFVQmln6dmZaD2rxQ9a5__M/edit?usp=sharing)!
 
 ## Team Members
-- Alex Korte - [korte@clemson.edu]()
-- Alex Duncan - [afdunca@clemson.edu]()
-- Ethan Anderson - [ema8@clemson.edu]()
+- Alex Korte - [korte@clemson.edu](mailto:korte@clemson.edu)
+- Alex Duncan - [afdunca@clemson.edu](mailto:afdunca@clemson.edu)
+- Ethan Anderson - [ema8@clemson.edu](mailto:ema8@clemson.edu)
 
 ## Purpose
 
